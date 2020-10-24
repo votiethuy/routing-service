@@ -76,10 +76,4 @@ OR
 docker run -it --rm=true --name=athena -p 5000:5000 athena:latest
 ```
 
-OR use public image
-
-```bash
-docker run -it --rm=true --name=athena -p 5000:5000 votiethuy/athena:latest
-```
-
 Access via: [locahost:5000/apidocs](http://localhost:5000/apidocs)
