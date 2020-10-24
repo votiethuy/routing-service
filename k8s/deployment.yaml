@@ -32,6 +32,20 @@ spec:
             value: "5000"
         ports:
           - containerPort: 5000
+        livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 1
+        readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 1
         resources:
           requests:
             memory: 1Gi

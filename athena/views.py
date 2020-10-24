@@ -5,6 +5,10 @@ import json
 from .models import StationMap
 from . import app
 
+@app.route("/healthz")
+def healthz():
+    return jsonify(success=True)
+
 @app.route("/v1/locations")
 def list_location():
     """Endpoint returning a list of Station
