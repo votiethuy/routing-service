@@ -3,6 +3,7 @@
 You are provided data on the stations and lines of Singapore's urban rail system, including planned additions over the next few years. Your task is to use this data to build a routing service, to help users find routes from any station to any other station on this future network.
 
 [![Build Status](https://travis-ci.org/votiethuy/routing-service.svg)](https://travis-ci.org/votiethuy/routing-service)
+[![codecov](https://codecov.io/gh/votiethuy/routing-service/branch/main/graph/badge.svg?token=No8s3cbufI)](undefined)
 
 
 ## Dependency
