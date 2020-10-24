@@ -122,6 +122,4 @@ Step:
 - Run Test
 - Image build
 - Push Image to Google Container Registry
-- Helm chart build
-- Push helm chart to helmchart repo
 - Deploy into Kubernetes Cluster
