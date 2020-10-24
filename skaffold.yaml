@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta8
+kind: Config
+metadata:
+  name: routing-service
+build:
+  artifacts:
+  - image: athena
+deploy:
+  kubectl:
+    manifests:
+    - k8s/deployment.yaml
+portForward:
+  - resourceType: service
+    resourceName: athena
+    port: 5000

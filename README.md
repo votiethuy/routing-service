@@ -80,6 +80,37 @@ docker run -it --rm=true --name=athena -p 5000:5000 athena:latest
 
 Access via: [locahost:5000/apidocs](http://localhost:5000/apidocs)
 
+### Kubernetes Local Development
+
+Use Minikube + Helm + Skaffold
+
+```
+brew install minikube
+brew install helm
+brew install skaffold
+```
+
+Start Minikube
+
+```
+minikube start
+```
+
+You can now run [skaffold build] to build the artifacts
+or [skaffold run] to build and deploy
+or [skaffold dev] to enter development mode, with auto-redeploy
+
+To Auto port-forwad add flag `--port-forward`
+
+```
+skaffold dev --port-forward
+```
+
+
+Go to [localhost](http://localhost:5000/apidocs/)
+
+
+
 ### CI/CD
 
 Use Travis as our CI/CD, describe step at .travis.yml
