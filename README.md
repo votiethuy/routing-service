@@ -63,7 +63,7 @@ docker build -t athena:latest .
 ### TEST
 
 ```bash
-python3 -m unittest discover -s tests
+coverage run -m unittest discover -s tests
 ```
 
 ### Start Service
@@ -85,3 +85,12 @@ Access via: [locahost:5000/apidocs](http://localhost:5000/apidocs)
 Use Travis as our CI/CD, describe step at .travis.yml
 
 [Travis](https://travis-ci.org/votiethuy/routing-service)
+
+Step:
+
+- Run Test
+- Image build
+- Push Image to Google Container Registry
+- Helm chart build
+- Push helm chart to helmchart repo
+- Deploy into Kubernetes Cluster
