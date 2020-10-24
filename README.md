@@ -48,7 +48,7 @@ For deactivate
 pyenv deactivate athena
 ```
 
-### Docker
+### Docker Build
 
 Follow instruction to install docker: https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
@@ -57,6 +57,8 @@ Docker build image
 ```bash
 docker build -t athena:latest .
 ```
+
+### Development
 
 ### TEST
 
@@ -77,3 +79,9 @@ docker run -it --rm=true --name=athena -p 5000:5000 athena:latest
 ```
 
 Access via: [locahost:5000/apidocs](http://localhost:5000/apidocs)
+
+### CI/CD
+
+Use Travis as our CI/CD, describe step at .travis.yml
+
+[Travis](https://travis-ci.org/votiethuy/routing-service)
