@@ -81,11 +81,11 @@ Access via: [locahost:5000/apidocs](http://localhost:5000/apidocs)
 
 ### Kubernetes Local Development
 
-Use Minikube + Helm + Skaffold
+Use Minikube + Kubectl + Skaffold
 
 ```
 brew install minikube
-brew install helm
+brew install kubectl
 brew install skaffold
 ```
 
