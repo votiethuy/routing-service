@@ -1,6 +1,7 @@
 # Routing Service
 
 Project CodeName: Athena
+
 You are provided data on the stations and lines of Singapore's urban rail system, including planned additions over the next few years. Your task is to use this data to build a routing service, to help users find routes from any station to any other station on this future network.
 
 [![Build Status](https://travis-ci.org/votiethuy/routing-service.svg)](https://travis-ci.org/votiethuy/routing-service)
@@ -53,8 +54,6 @@ pyenv deactivate athena
 ```
 
 ### Docker Build
-
-Docker build image
 
 ```bash
 docker build -t athena:latest .
