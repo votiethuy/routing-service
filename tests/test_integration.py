@@ -14,7 +14,7 @@ class TestViews(unittest.TestCase):
 
     def test_find_route_not_pass_source_destionation(self):
         response = self.app.post('/v1/route',data={}, follow_redirects=True)
-        self.assertEqual(401, response.status_code)
+        self.assertEqual(400, response.status_code)
 
     def test_find_route_not_found_source(self):
         response = self.app.post('/v1/route',data={'source':"not found","destination":"not founnd"}, follow_redirects=True)
@@ -47,7 +47,7 @@ class TestViews(unittest.TestCase):
         self.assertEqual(200, response.status_code)
         expected_route = []
         expected_time = 0
-        expected_instruction = ['Cannot found any path from given source and destination, some station is not operation now']
+        expected_instruction = ['Cannot find any path from given source and destination, some stations are not operation now']
         self.assertEqual(expected_time, response.json['time'])
         self.assertListEqual(expected_route, response.json['route'])
         self.assertEqual(expected_instruction, response.json['instruction'])

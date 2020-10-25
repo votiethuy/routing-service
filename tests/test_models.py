@@ -1,7 +1,7 @@
 import unittest
 
 from athena.models import StationMap
-
+from dateutil.parser import parse
 
 class TestStationMap(unittest.TestCase):
     def setUp(self):
@@ -57,7 +57,7 @@ class TestStationMap(unittest.TestCase):
         """
         Test that get time of day
         """
-        start_time = "2019-01-31T20:00"
+        start_time = parse("2019-01-31T20:00")
         time = self.station_map.get_time_of_day(start_time)
         expected_time = 'peak'
         self.assertEqual(expected_time, time)
@@ -81,7 +81,7 @@ class TestStationMap(unittest.TestCase):
         """
         source = "Boon Lay"
         destination = "Little India"
-        start_time = "2019-01-31T16:00"
+        start_time = parse("2019-01-31T16:00")
         expected_route = ['EW27', 'EW26', 'EW25', 'EW24', 'EW23', 'EW22', 'EW21', 'CC22', 'CC21', 'CC20', 'CC19', 'DT9', 'DT10', 'DT11', 'DT12']
         expected_time = 134
         route, time = self.station_map.find_route_with_time_constraint(source, destination, start_time)
