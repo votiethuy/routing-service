@@ -6,10 +6,11 @@ You are provided data on the stations and lines of Singapore's urban rail system
 [![Build Status](https://travis-ci.org/votiethuy/routing-service.svg)](https://travis-ci.org/votiethuy/routing-service)
 [![codecov](https://codecov.io/gh/votiethuy/routing-service/branch/main/graph/badge.svg?token=No8s3cbufI)](undefined)
 
-Live deployment on GKE cluster: http://34.87.61.117/apidocs/
+Live version: http://34.87.61.117/apidocs/
 
+Env: Google Kubernetes Engine
 Local Development: Minikube + Skaffold
-GKE Remote Deployment: Travis + Skaffold
+Remote Deployment: Travis + Skaffold + Google Cloud Build
 
 
 ## Local Development Instruction
