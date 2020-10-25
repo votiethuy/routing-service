@@ -1,16 +1,18 @@
 # Routing Service
 
+Project CodeName: Athena
 You are provided data on the stations and lines of Singapore's urban rail system, including planned additions over the next few years. Your task is to use this data to build a routing service, to help users find routes from any station to any other station on this future network.
 
 [![Build Status](https://travis-ci.org/votiethuy/routing-service.svg)](https://travis-ci.org/votiethuy/routing-service)
 [![codecov](https://codecov.io/gh/votiethuy/routing-service/branch/main/graph/badge.svg?token=No8s3cbufI)](undefined)
 
+Live deployment on GKE cluster: http://34.87.61.117/apidocs/
 
-## Dependency
+Local Development: Minikube + Skaffold
+GKE Remote Deployment: Travis + Skaffold
 
-- Python 3.6.8
 
-## Instruction
+## Local Development Instruction
 
 ### Virtualenv
 
@@ -51,15 +53,11 @@ pyenv deactivate athena
 
 ### Docker Build
 
-Follow instruction to install docker: https://docs.docker.com/install/linux/docker-ce/ubuntu/
-
 Docker build image
 
 ```bash
 docker build -t athena:latest .
 ```
-
-### Development
 
 ### TEST
 
@@ -97,9 +95,9 @@ Start Minikube
 minikube start
 ```
 
-You can now run [skaffold build] to build the artifacts
-or [skaffold run] to build and deploy
-or [skaffold dev] to enter development mode, with auto-redeploy
+* You can now run `skaffold build` to build the artifacts
+* `skaffold run` to build and deploy
+* `skaffold dev` to enter development mode, with auto-redeploy
 
 To Auto port-forwad add flag `--port-forward`
 
@@ -108,7 +106,7 @@ skaffold dev --port-forward
 ```
 
 
-Go to [localhost](http://localhost:5000/apidocs/)
+Go to [localhost:5000/apidocs/](http://localhost:5000/apidocs/)
 
 
 

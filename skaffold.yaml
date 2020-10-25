@@ -12,7 +12,8 @@ deploy:
 portForward:
   - resourceType: service
     resourceName: athena
-    port: 5000
+    port: 80
+    localPort: 5000
 
 profiles:
 - name: gke
