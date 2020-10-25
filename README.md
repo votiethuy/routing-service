@@ -8,9 +8,9 @@ You are provided data on the stations and lines of Singapore's urban rail system
 
 Live version: http://34.87.61.117/apidocs/
 
-Env: Google Kubernetes Engine
-Local Development: Minikube + Skaffold
-Remote Deployment: Travis + Skaffold + Google Cloud Build
+- Env: Google Kubernetes Engine
+- Local Development: Minikube + Skaffold
+- CI/CD: Travis + Skaffold + Google Cloud Build
 
 
 ## Local Development Instruction
