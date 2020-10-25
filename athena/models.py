@@ -152,8 +152,7 @@ class StationMap:
         else:
             return None
     
-    def get_time_of_day(self, start_time):
-        time_obj = parse(start_time)
+    def get_time_of_day(self, time_obj):
         weekday = time_obj.weekday()
         hour = time_obj.hour
         time = NON_PEAK_TIME
