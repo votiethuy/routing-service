@@ -90,7 +90,7 @@ def find_route_time_constraint():
     try:
       time_obj = parse(start_time)
     except (ParserError, TypeError, OverflowError) as e:
-      abort(400, {'message': 'Startime: Wrong datetime format'})
+      abort(400, {'message': 'Startime: Wrong datetime format. It should be yyyy-mm-ddTHH:MM:SS+TZ'})
     route, time = app.config['station_map'].find_route_with_time_constraint(source, destination, time_obj)
     if route is None:
       return jsonify({'time':time, 'route':[], 
