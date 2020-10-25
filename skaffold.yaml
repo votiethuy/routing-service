@@ -4,7 +4,7 @@ metadata:
   name: routing-service
 build:
   artifacts:
-  - image: gcr.io/votiethuy/athena
+  - image: gcr.io/zendesk-293508/athena
 deploy:
   kubectl:
     manifests:
@@ -19,3 +19,5 @@ profiles:
   build:
     googleCloudBuild:
       projectId: zendesk-293508
+    tagPolicy:
+      gitCommit: {}

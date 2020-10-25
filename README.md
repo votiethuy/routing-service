@@ -114,13 +114,16 @@ Go to [localhost](http://localhost:5000/apidocs/)
 
 ### CI/CD
 
-Use Travis as our CI/CD, describe step at .travis.yml
+- Use Travis as CI/CD
+- Skaffold GKE profile
+
+Detail describes at `.travis.yml` and `skaffold.yaml`
 
 [Travis](https://travis-ci.org/votiethuy/routing-service)
 
 Step:
 
 - Run Test
-- Image build
+- Trigger Google Cloud Build
 - Push Image to Google Container Registry
 - Deploy into Kubernetes Cluster

@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: athena
-        image: gcr.io/votiethuy/athena
+        image: gcr.io/zendesk-293508/athena
         env:
           - name: PORT
             value: "5000"
@@ -55,7 +55,7 @@ spec:
         resources:
           requests:
             memory: 1Gi
-            cpu: 1
+            cpu: 200m
           limits:
             memory: 1Gi
-            cpu: 1
+            cpu: 200m
