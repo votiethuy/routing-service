@@ -4,7 +4,7 @@ metadata:
   name: routing-service
 build:
   artifacts:
-  - image: athena
+  - image: gcr.io/votiethuy/athena
 deploy:
   kubectl:
     manifests:
@@ -13,3 +13,9 @@ portForward:
   - resourceType: service
     resourceName: athena
     port: 5000
+
+profiles:
+- name: gke
+  build:
+    googleCloudBuild:
+      projectId: zendesk-293508

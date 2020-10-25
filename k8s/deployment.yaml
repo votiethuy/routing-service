@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: athena
-        image: athena
+        image: gcr.io/votiethuy/athena
         env:
           - name: PORT
             value: "5000"

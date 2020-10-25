@@ -1,10 +1,45 @@
 language: python
 python:
   - "3.6"
+
+# Cache Gcloud SDK between commands
+cache:
+  directories:
+    - "$HOME/google-cloud-sdk/"
+
+# Set env vars
+env:
+  global:
+    - GOOGLE_APPLICATION_CREDENTIALS=~/gcloud-service-key.json
+
+before_install:
+  - curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && chmod +x skaffold && sudo mv skaffold /usr/local/bin/
+
 # command to install dependencies
 install:
   - pip3 install -r requirements.txt
+
 script:
   - coverage run -m unittest discover -s tests
+
 after_success:
   - codecov
+
+before_deploy:
+  - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+  - source /home/travis/google-cloud-sdk/path.bash.inc
+  - echo $GCLOUD_SERVICE | base64 --decode -i > ${HOME}/gcloud-service-key.json
+  - gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
+  - gcloud --quiet version
+  - gcloud --quiet components update
+  - gcloud container clusters get-credentials zendesk-1 --zone asia-southeast1-a --project zendesk-293508
+
+deploy:
+  - provider: script
+    script: skaffold run -p gke
+    skip_cleanup: true
+    on:
+      branch: main
+
+
+
